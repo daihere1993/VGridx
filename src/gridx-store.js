@@ -2,7 +2,8 @@ function Store (grid, options) {
   this.states = {
     data: null,
     columns: [],
-    rows: []
+    rows: [],
+    isTree: false
   };
 
   for (let name in options) {

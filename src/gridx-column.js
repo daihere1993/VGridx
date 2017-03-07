@@ -4,8 +4,8 @@ export default {
   data () {
     return {
       columns: [],
-      row: {},
-      column: {}
+      column: {},
+      rowExpanded: false
     }
   },
 
@@ -20,6 +20,12 @@ export default {
     canExpand: {
       canExpand: Boolean,
       default: false
+    }
+  },
+
+  watch: {
+    'row.expanded' (val) {
+      this.rowExpanded = val;
     }
   },
 
@@ -45,7 +51,7 @@ export default {
               class="cell-expand-icon" 
               on-click={ row.expand }
               v-show={ row.children && row.children.length && column.canExpand }>
-              <i class="fa fa-plus-square-o"></i>
+              <i class={['fa', row.expanded ? 'fa-minus-square-o' : 'fa-plus-square-o']}></i>
             </div>
             { row.value[columnName] }
           </div>)

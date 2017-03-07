@@ -4,6 +4,12 @@ import CollapseTransition from './collapse-transition'
 export default {
   name: 'VGridxRow',
 
+  data () {
+    return {
+      expanded: false
+    }
+  },
+
   props: {
     value: {
       required: true
@@ -16,8 +22,8 @@ export default {
 
   created () {
     this.row = {
-      show: this.show,
-      children: this.value.children,
+      expanded: this.expanded,
+      children: this.value.children || [],
       value: this.value,
       parent: this.parent,
       expand: this.expand
@@ -31,18 +37,19 @@ export default {
 
   methods: {
     expand () {
-      this.show = true;
-      console.log("expand");
+      if (this.expanded) {
+        this.expanded = false;
+        this.row.expanded = false;
+      } else {
+        this.expanded = true;
+        this.row.expanded = true;
+      }
     }
   },
 
   computed: {
     columns () {
       return this.store.states.columns;
-    },
-
-    show () {
-      return this.value.children ? false : true;
     }
   },
 
@@ -75,7 +82,7 @@ export default {
           </tbody>
         </table>
         <collapse-transition>
-          <div v-show={ this.show }>
+          <div v-show={ this.expanded } class="gridx-subnode">
             {
               this._l(this.row.children, child => 
                 <v-gridx-row store={ this.store } value={ child } parent={ this.row }></v-gridx-row> 

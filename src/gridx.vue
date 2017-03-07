@@ -67,6 +67,14 @@
 
   .cell-expand-icon {
     display: inline;
-    margin-right: 10px;
+    margin-right: 4px;
+  }
+
+  .gridx-subnode .gridx-tree-expand-cell {
+    padding-left: 26px;
+  }
+
+  .gridx-row .gridx-tree-nochildren-cell {
+    padding-left: 16px;
   }
 </style>
