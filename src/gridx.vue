@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="gridx">
     <div class="hidden-columns" ref="hiddenColumns"><slot></slot></div>
     <div class="grix-header">
       <v-gridx-header :store="store"></v-gridx-header>
@@ -61,6 +61,15 @@
 </script>
 
 <style>
+  table {
+    border-spacing: 0px;
+  }
+
+  .gridx {
+    border-left: 1px solid #e0e6ed;
+    border-top: 1px solid #e0e6ed;
+  }
+
   .hidden-columns {
     display: none;
   }
@@ -76,5 +85,15 @@
 
   .gridx-row .gridx-tree-nochildren-cell {
     padding-left: 16px;
+  }
+
+  .gridx-header-cell {
+    
+  }
+
+  .gridx td {
+    border-bottom: 1px solid #e0e6ed;
+    border-right: 1px solid #e0e6ed;
+    padding: 8px;
   }
 </style>

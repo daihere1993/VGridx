@@ -33,7 +33,7 @@ export default {
             <tr>
               {
                 this._l(this.columns, (column, columnIndex) =>
-                  <td>
+                  <td class="gridx-header-cell">
                     <div>
                       {
                         column.label

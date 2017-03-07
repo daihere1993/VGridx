@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" style="width: 760px;">
     <v-gridx :data="gridData">
       <v-gridx-column label="日期" prop="date" width="180" canExpand=true></v-gridx-column>
       <v-gridx-column label="姓名" prop="name" width="180"></v-gridx-column>
