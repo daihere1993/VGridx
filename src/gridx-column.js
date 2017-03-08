@@ -1,3 +1,5 @@
+import { DatePicker } from 'element-ui'
+
 export default {
   name: 'VGridxColumn',
 
@@ -5,7 +7,8 @@ export default {
     return {
       columns: [],
       column: {},
-      rowExpanded: false
+      rowExpanded: false,
+      cellComponent: 'DatePicker'
     }
   },
 
@@ -27,6 +30,10 @@ export default {
     'row.expanded' (val) {
       this.rowExpanded = val;
     }
+  },
+
+  components: {
+    DatePicker
   },
 
   render (h) {
@@ -54,6 +61,7 @@ export default {
               <i class={['fa', row.expanded ? 'fa-minus-square-o' : 'fa-plus-square-o']}></i>
             </div>
             { row.value[columnName] }
+            <component is={ this.cellComponent }></component>
           </div>)
       }
     };

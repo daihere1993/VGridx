@@ -2,13 +2,16 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-require('font-awesome/css/font-awesome.min.css')
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-default/index.css'
+import 'font-awesome/css/font-awesome.min.css'
 
-Vue.config.productionTip = false
+Vue.use(ElementUI);
+Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   template: '<App/>',
   components: { App }
-})
+});
