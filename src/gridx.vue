@@ -85,11 +85,11 @@
   }
 
   .gridx-subnode .gridx-tree-expand-cell {
-    padding-left: 26px;
+    padding-left: 32px;
   }
 
   .gridx-row .gridx-tree-nochildren-cell {
-    padding-left: 16px;
+    padding-left: 22px;
   }
 
   .gridx-header-cell {
