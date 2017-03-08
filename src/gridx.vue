@@ -61,6 +61,11 @@
 </script>
 
 <style>
+  .cell-expand-icon {
+    font-size: 14px;
+    cursor: pointer;
+  }
+
   table {
     border-spacing: 0px;
   }
