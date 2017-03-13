@@ -82,14 +82,11 @@
   .cell-expand-icon {
     display: inline;
     margin-right: 4px;
+    color: #bfcbd9;
   }
 
   .gridx-subnode .gridx-tree-expand-cell {
-    padding-left: 32px;
-  }
-
-  .gridx-row .gridx-tree-nochildren-cell {
-    padding-left: 22px;
+    padding-left: 16px;
   }
 
   .gridx-header-cell {
@@ -100,5 +97,9 @@
     border-bottom: 1px solid #e0e6ed;
     border-right: 1px solid #e0e6ed;
     padding: 8px;
+  }
+
+  .gridx-cell {
+    display: flex;
   }
 </style>

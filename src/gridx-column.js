@@ -8,7 +8,7 @@ export default {
       columns: [],
       column: {},
       rowExpanded: false,
-      cellComponent: 'DatePicker'
+      cellComponent: DatePicker
     }
   },
 
@@ -47,23 +47,7 @@ export default {
       type: this.type,
       prop: this.prop,
       width: this.width,
-      canExpand: this.canExpand,
-      renderCell: (h, data) => {
-        const row = data.row;
-        const column = data.column;
-        const columnName = column.prop;
-        return (
-          <div class="cell">
-            <div 
-              class="cell-expand-icon" 
-              on-click={ row.expand }
-              v-show={ row.children && row.children.length && column.canExpand }>
-              <i class={['fa', row.expanded ? 'fa-minus-square-o' : 'fa-plus-square-o']}></i>
-            </div>
-            { row.value[columnName] }
-            <component is={ this.cellComponent }></component>
-          </div>)
-      }
+      canExpand: this.canExpand
     };
   },
 
