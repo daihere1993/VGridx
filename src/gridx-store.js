@@ -3,7 +3,8 @@ function Store (grid, options) {
     data: null,
     columns: [],
     rows: [],
-    isTree: false
+    isTree: false,
+    isEditing: false
   };
 
   for (let name in options) {

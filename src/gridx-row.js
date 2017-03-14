@@ -26,7 +26,8 @@ export default {
       children: this.value.children || [],
       value: this.value,
       parent: this.parent,
-      expand: this.expand
+      expand: this.expand,
+      store: this.store
     };
     delete this.value.children;
   },

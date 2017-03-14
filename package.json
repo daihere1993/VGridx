@@ -11,6 +11,7 @@
   "dependencies": {
     "element-ui": "^1.2.3",
     "font-awesome": "^4.7.0",
+    "mo2js": "^0.2.4",
     "vue": "^2.2.1"
   },
   "devDependencies": {
