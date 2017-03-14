@@ -11,14 +11,16 @@
       <div class="gridx-cell-value" v-if="!isEditing" v-on:dblclick="edit">
         {{ fomattedValue }}
       </div>
-      <component :is="asyncWidget" type="date" placeholder="选择日期" v-model="value" style="width: 100%;" v-clickoutside="handleClose" v-else></component>
+      <keep-alive v-else>
+        <component :is="asyncComponent" v-model="value" style="width: 100%;" v-clickoutside="handleClose"></component>
+      </keep-alive>
     </div>
   </td>
 </template>
 
 <script>
   import mo2js from 'mo2js';
-  import { DatePicker } from 'element-ui';
+  import ELComponents from 'element-ui';
   import Clickoutside from './clickoutside.js';
 
   export default {
@@ -26,7 +28,6 @@
 
     data () {
       return {
-        asyncWidget: DatePicker,
         isEditing: false,
         value: this.row.value[this.column.prop]
       }
@@ -44,6 +45,23 @@
     directives: { Clickoutside },
 
     computed: {
+      asyncComponent () {
+        let component_name, component;
+        const column_type = this.column.type;
+        switch (column_type) {
+          case 'date':
+            component_name = 'DatePicker';
+            break;
+          case 'enum':
+            component_name = 'Select';
+            break;
+          default: 
+            component_name = 'Input';
+            break;
+        }
+        component = ELComponents[component_name];
+        return component;
+      },
       getCellClass () {
         if (this.column.canExpand) {
           if (this.row.parent) {

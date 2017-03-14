@@ -23,7 +23,8 @@ export default {
     canExpand: {
       canExpand: Boolean,
       default: false
-    }
+    },
+    enumItems: Array
   },
 
   watch: {
@@ -47,7 +48,8 @@ export default {
       type: this.type,
       prop: this.prop,
       width: this.width,
-      canExpand: this.canExpand
+      canExpand: this.canExpand,
+      enumItems: this.enumItems
     };
   },
 
